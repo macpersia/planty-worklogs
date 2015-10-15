@@ -8,4 +8,4 @@
 export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
 export PATH="$JAVA_HOME/bin:$PATH"
 export JAVA_OPTS="-Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT"
-nohup $OPENSHIFT_DIY_DIR/diy/projects/planty-jira-web/target/universal/stage/bin/planty-jira-web |& /usr/bin/logshifter -tag diy &
+nohup $OPENSHIFT_DIY_DIR/projects/planty-jira-web/target/universal/stage/bin/planty-jira-web |& /usr/bin/logshifter -tag diy &
