@@ -4,10 +4,9 @@
 export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
 export PATH="$JAVA_HOME/bin:$PATH"
 cd $OPENSHIFT_REPO_DIR
-mkdir ./fakehome
-export JAVA_OPTS="-Xms256m -Xmx512m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Duser.home=$OPENSHIFT_REPO_DIR/fakehome"
+mkdir -p ./fakehome
 cd $OPENSHIFT_REPO_DIR/planty-jira-view
-../sbt/bin/sbt -v -Dsbt.log.noformat=true publishLocal
+../sbt/bin/sbt -v -mem 384 -Dsbt.log.noformat=true -Duser.home=$OPENSHIFT_REPO_DIR/fakehome publishLocal
 cd $OPENSHIFT_REPO_DIR/planty-jira-web
-../sbt/bin/sbt -v -Dsbt.log.noformat=true stage
+../sbt/bin/sbt -v -mem 384 -Dsbt.log.noformat=true -Duser.home=$OPENSHIFT_REPO_DIR/fakehome stage
 
