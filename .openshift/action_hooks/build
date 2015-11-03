@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Added by Hadi
-cd $OPENSHIFT_REPO_DIR
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
+export PATH="$JAVA_HOME/bin:$PATH"
+ecd $OPENSHIFT_REPO_DIR
 mkdir ./fakehome
 JAVA_OPTS="-Xms256m -Xmx512m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Duser.home=$OPENSHIFT_REPO_DIR/fakehome"
 cd $OPENSHIFT_REPO_DIR/planty-jira-view
