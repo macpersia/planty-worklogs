@@ -1,0 +1,6 @@
+[submodule "planty-jira-view"]
+	path = planty-jira-view
+	url = https://github.com/macpersia/planty-jira-view.git
+[submodule "planty-jira-web"]
+	path = planty-jira-web
+	url = https://github.com/macpersia/planty-jira-web.git
