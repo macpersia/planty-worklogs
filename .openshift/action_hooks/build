@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Added by Hadi
+mkdir -p $OPENSHIFT_REPO_DIR/fakehome
+JAVA_OPTS="-Xms256m -Xmx512m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Duser.home=$OPENSHIFT_REPO_DIR/fakehome"
+cd $OPENSHIFT_REPO_DIR/planty-jira-view
+$OPENSHIFT_DEPENDENCIES_DIR/sbt/bin/sbt  publishLocal
+cd $OPENSHIFT_REPO_DIR/planty-jira-web
+$OPENSHIFT_DEPENDENCIES_DIR/sbt/bin/sbt  stage
+
