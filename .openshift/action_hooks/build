@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Added by Hadi
-mkdir $OPENSHIFT_REPO_DIR/fakehome
+cd $OPENSHIFT_REPO_DIR
+mkdir ./fakehome
 JAVA_OPTS="-Xms256m -Xmx512m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Duser.home=$OPENSHIFT_REPO_DIR/fakehome"
 cd $OPENSHIFT_REPO_DIR/planty-jira-view
 $OPENSHIFT_REPO_DIR/sbt/bin/sbt -Dsbt.log.noformat=true publishLocal
