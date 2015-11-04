@@ -5,7 +5,8 @@
 # Changed by Hadi
 ## $OPENSHIFT_DIY_IP:8080
 #nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0
 export PATH="$JAVA_HOME/bin:$PATH"
 export JAVA_OPTS="-Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT"
+export JAVA_OPTS="$JAVA_OPTS -Xms256m -Xmx416m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=96m -Duser.home=$OPENSHIFT_REPO_DIR/fakehome"
 nohup $OPENSHIFT_REPO_DIR/planty-jira-web/target/universal/stage/bin/planty-jira-web |& /usr/bin/logshifter -tag diy &
