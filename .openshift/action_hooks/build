@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Added by Hadi
-#export JAVA_HOME=/usr/lib/jvm/java-1.8.0
-#export PATH="$JAVA_HOME/bin:$PATH"
+ls -la /usr/lib/jvm/
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0
+export PATH="$JAVA_HOME/bin:$PATH"
 cd $OPENSHIFT_REPO_DIR
 mkdir -p ./fakehome
 cd $OPENSHIFT_REPO_DIR/planty-jira-view
