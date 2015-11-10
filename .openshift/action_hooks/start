@@ -17,4 +17,4 @@ export JAVA_OPTS="$JAVA_OPTS -Dmongodb.host=$OPENSHIFT_MONGODB_DB_HOST -Dmongodb
 
 # Temporaily for staging
 cd $OPENSHIFT_REPO_DIR
-nohup $OPENSHIFT_BUILD_DEPENDENCIES_DIR/sbt/bin/sbt -v -mem 416 -Dsbt.log.noformat=true -Duser.home=$OPENSHIFT_DEPENDENCIES_DIR/fakehome jiraWeb/run $JAVA_OPTS |& /usr/bin/logshifter -tag diy &
+nohup $OPENSHIFT_BUILD_DEPENDENCIES_DIR/sbt/bin/sbt -Dsbt.log.noformat=true jiraWeb/run $JAVA_OPTS |& /usr/bin/logshifter -tag diy &
