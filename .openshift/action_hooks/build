@@ -7,5 +7,5 @@ export JAVA_HOME=/usr/lib/jvm/java-1.8.0
 export PATH="$JAVA_HOME/bin:$PATH"
 
 cd $OPENSHIFT_REPO_DIR
-$OPENSHIFT_BUILD_DEPENDENCIES_DIR/sbt/bin/sbt -v -mem 416 -Dsbt.log.noformat=true -Duser.home=$OPENSHIFT_DEPENDENCIES_DIR/fakehome stage
+$OPENSHIFT_BUILD_DEPENDENCIES_DIR/sbt/bin/sbt -v -mem 480 -Dsbt.log.noformat=true -Duser.home=$OPENSHIFT_DEPENDENCIES_DIR/fakehome stage
 
