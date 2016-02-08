@@ -1,28 +1,17 @@
-package com.github.macpersia.planty_cats_view
+package com.github.macpersia.planty.views.cats
 
 import java.io.{File, FileNotFoundException}
-import java.net._
+import java.net.{URI, URISyntaxException}
 import java.time.LocalDate
 import java.util.TimeZone
 
-import com.github.macpersia.planty_cats_view.WorklogReporter._
+import com.github.macpersia.planty.views.cats.WorklogReporter._
+import com.github.macpersia.planty.worklogs.model.WorklogFilter
 import com.typesafe.scalalogging.LazyLogging
-import resource.managed
+import resource._
 import scopt.OptionParser
 
-import scala.concurrent.ExecutionContext.Implicits.global
-
-case class AppParams(
-                      baseUrl: URI = new URI("https://cats.arvato-systems.de/gui4cats-webapi"),
-                      username: String = null,
-                      password: String = null,
-                      author: Option[String] = None,
-                      // fromDate: DateTime = dateFormatter parseDateTime "2015-08-16" ,
-                      // toDate: DateTime = dateFormatter parseDateTime "2015-09-22",
-                      fromDate: LocalDate = LocalDate.now minusWeeks 1,
-                      toDate: LocalDate = LocalDate.now plusDays 1,
-                      timeZone: TimeZone = TimeZone.getDefault,
-                      outputFile: Option[File] = None )
+import scala.concurrent.ExecutionContext.Implicits._
 
 object App extends LazyLogging {
 
@@ -53,7 +42,7 @@ object App extends LazyLogging {
               params.username,
               if (params.password != null) params.password else promptForPassword
         )
-        val filter: WorklogFilter = WorklogFilter(
+        val filter: WorklogFilter = new WorklogFilter(
           params.author, params.fromDate, params.toDate, params.timeZone)
 
         for (reporter <- managed(new WorklogReporter(connConfig, filter)(global))) {
@@ -68,4 +57,16 @@ object App extends LazyLogging {
     String valueOf System.console.readPassword("Please enter you password: ")
   }
 }
+
+case class AppParams(
+                      baseUrl: URI = new URI("https://cats.arvato-systems.de/gui4cats-webapi"),
+                      username: String = null,
+                      password: String = null,
+                      author: Option[String] = None,
+                      // fromDate: DateTime = dateFormatter parseDateTime "2015-08-16" ,
+                      // toDate: DateTime = dateFormatter parseDateTime "2015-09-22",
+                      fromDate: LocalDate = LocalDate.now minusWeeks 1,
+                      toDate: LocalDate = LocalDate.now plusDays 1,
+                      timeZone: TimeZone = TimeZone.getDefault,
+                      outputFile: Option[File] = None )
 

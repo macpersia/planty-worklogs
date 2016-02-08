@@ -1,28 +1,27 @@
-package com.github.macpersia.planty_cats_view
+package com.github.macpersia.planty.views.cats
 
 import java.io.{File, PrintStream}
 import java.net.URI
+import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatter.ofPattern
-import java.time.{ZonedDateTime, LocalDate, ZoneId}
 import java.util
 import java.util.Collections._
 import java.util._
 import java.util.concurrent.TimeUnit.MINUTES
 
-import com.github.macpersia.planty_cats_view.WorklogReporter.{TS_FORMATTER, DATE_FORMATTER}
+import com.github.macpersia.planty.views.cats.WorklogReporter.{TS_FORMATTER, DATE_FORMATTER}
+import com.github.macpersia.planty.worklogs.model.{WorklogFilter, WorklogEntry}
 import com.typesafe.scalalogging.LazyLogging
 import play.api.libs.json.{JsError, JsSuccess}
 import play.api.libs.ws.WS
-import play.api.libs.ws.WSAuthScheme.BASIC
 import play.api.libs.ws.ning.NingWSClient
 import resource.managed
 
 import scala.collection.JavaConversions._
-import scala.collection.immutable
-import scala.collection.parallel.immutable.ParSeq
-import scala.concurrent.duration.{Duration, SECONDS}
+import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, ExecutionContext}
+
 
 case class ConnectionConfig(
                              baseUri: URI,
@@ -36,21 +35,12 @@ case class ConnectionConfig(
   }
 }
 
-case class WorklogFilter( author: Option[String],
-                          fromDate: LocalDate,
-                          toDate: LocalDate,
-                          timeZone: TimeZone )
-
-case class WorklogEntry( date: LocalDate,
-                         description: String,
-                         duration: Double )
-
 object WorklogReporter extends LazyLogging {
   val DATE_FORMATTER = DateTimeFormatter.ISO_DATE
   val TS_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss VV")
 }
 
-import com.github.macpersia.planty_cats_view.model._
+import com.github.macpersia.planty.views.cats.model._
 
 class WorklogReporter(connConfig: ConnectionConfig, filter: WorklogFilter)
                      (implicit execContext: ExecutionContext)

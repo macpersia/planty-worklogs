@@ -1,12 +1,12 @@
-package com.github.macpersia.planty_cats_view
+package com.github.macpersia.planty.views.cats
 
+import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.time.{LocalDate, ZonedDateTime}
 
 import play.api.libs.functional.syntax._
-import play.api.libs.json._
+import play.api.libs.json.{JsPath, JsString, Reads, Writes}
 
-import scala.collection.immutable._
+import scala.collection.immutable.Seq
 
 package object model {
 

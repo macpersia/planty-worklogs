@@ -1,15 +1,21 @@
 import sbt._
 import Keys._
 
-object PlantyJiraBuild extends Build {
+object Build extends Build {
 
   lazy val plantyWorklogs = (project in file(".")).
-				aggregate(jiraView, jiraWeb)
+				aggregate(jiraView, worklogsWeb)
 
-  lazy val jiraView = (project in file("planty-jira-view"))
+  lazy val worklogsCommon = project in file("planty-worklogs-common")
 
-  lazy val jiraWeb =  (project in file("planty-jira-web")).
-			dependsOn(jiraView)
+  lazy val jiraView = (project in file("planty-jira-view")).
+      dependsOn(worklogsCommon)
+
+  lazy val catsView = (project in file("planty-cats-view")).
+      dependsOn(worklogsCommon)
+
+  lazy val worklogsWeb =  (project in file("planty-worklogs-web")).
+			dependsOn(jiraView, catsView)
 
 }
 
