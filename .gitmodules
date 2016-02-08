@@ -2,7 +2,7 @@
 	path = planty-jira-view
 	#url = https://github.com/macpersia/planty-jira-view.git
 	url = git@github.com:macpersia/planty-jira-view.git
-[submodule "planty-jira-web"]
-	path = planty-jira-web
-	#url = https://github.com/macpersia/planty-jira-web.git
-	url = git@github.com:macpersia/planty-jira-web.git
+[submodule "planty-worklogs-web"]
+	path = planty-worklogs-web
+	#url = https://github.com/macpersia/planty-worklogs-web.git
+	url = git@github.com:macpersia/planty-worklogs-web.git
