@@ -12,5 +12,5 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export JAVA_OPTS="-Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT"
 export JAVA_OPTS="$JAVA_OPTS -Xms256m -Xmx416m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=96m -Duser.home=$OPENSHIFT_DATA_DIR/fakehome"
 export JAVA_OPTS="$JAVA_OPTS -Dmongodb.host=$OPENSHIFT_MONGODB_DB_HOST -Dmongodb.username=$OPENSHIFT_MONGODB_DB_USERNAME -Dmongodb.password=$OPENSHIFT_MONGODB_DB_PASSWORD"
-nohup $OPENSHIFT_REPO_DIR/planty-jira-web/target/universal/stage/bin/planty-jira-web |& /usr/bin/logshifter -tag diy &
+nohup $OPENSHIFT_REPO_DIR/planty-worklogs-web/target/universal/stage/bin/planty-jira-web |& /usr/bin/logshifter -tag diy &
 
