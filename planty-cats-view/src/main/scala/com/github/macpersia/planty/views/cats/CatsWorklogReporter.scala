@@ -10,7 +10,8 @@ import java.util.Collections._
 import java.util._
 import java.util.concurrent.TimeUnit.MINUTES
 
-import com.github.macpersia.planty.views.cats.WorklogReporter.{TS_FORMATTER, DATE_FORMATTER}
+import com.github.macpersia.planty.views.cats.CatsWorklogReporter.{TS_FORMATTER, DATE_FORMATTER}
+import com.github.macpersia.planty.worklogs.WorklogReporting
 import com.github.macpersia.planty.worklogs.model.{WorklogFilter, WorklogEntry}
 import com.typesafe.scalalogging.LazyLogging
 import play.api.libs.json.{JsError, JsSuccess}
@@ -35,16 +36,16 @@ case class ConnectionConfig(
   }
 }
 
-object WorklogReporter extends LazyLogging {
+object CatsWorklogReporter extends LazyLogging {
   val DATE_FORMATTER = DateTimeFormatter.ISO_DATE
   val TS_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd HH:mm:ss VV")
 }
 
 import com.github.macpersia.planty.views.cats.model._
 
-class WorklogReporter(connConfig: ConnectionConfig, filter: WorklogFilter)
-                     (implicit execContext: ExecutionContext)
-  extends LazyLogging with AutoCloseable {
+class CatsWorklogReporter(connConfig: ConnectionConfig, filter: WorklogFilter)
+                         (implicit execContext: ExecutionContext)
+  extends LazyLogging with WorklogReporting {
 
   val zoneId = filter.timeZone.toZoneId
   implicit val sslClient = NingWSClient()
@@ -80,7 +81,7 @@ class WorklogReporter(connConfig: ConnectionConfig, filter: WorklogFilter)
     csvPs.println(s"$date, ${entry.description}, ${entry.duration}")
   }
 
-  def retrieveWorklogs(): Seq[WorklogEntry] = {
+  override def retrieveWorklogs(): Seq[WorklogEntry] = {
 
     logger.debug(s"Searching the CATS at ${connConfig.baseUriWithSlash} as ${connConfig.username}")
 

@@ -13,7 +13,7 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.0.3")
 
 
 // **********************
-// FROM planty-jira-web
+// FROM planty-worklogs-web
 // **********************
 
 // The Play plugin
