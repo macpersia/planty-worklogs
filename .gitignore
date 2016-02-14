@@ -3,4 +3,6 @@ project/target/
 target/
 .history
 .idea/
+logs/
+jmeter.log
 planty-worklogs-common/project/.idea/
