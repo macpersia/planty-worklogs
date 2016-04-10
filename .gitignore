@@ -6,3 +6,10 @@ target/
 logs/
 jmeter.log
 planty-worklogs-common/project/.idea/
+.ensime
+.ensime_cache/
+planty-cats-view/.cache-main
+planty-worklogs-common/.cache-main
+planty-worklogs-common/.classpath
+planty-worklogs-common/.gitignore
+planty-worklogs-common/.project

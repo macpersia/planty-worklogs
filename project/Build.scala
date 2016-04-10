@@ -3,6 +3,9 @@ import Keys._
 
 object Build extends Build {
 
+  override lazy val settings = super.settings ++ Seq(
+    scalaVersion := "2.11.6"
+  )
   lazy val plantyWorklogs = (project in file(".")).
 				aggregate(jiraView, worklogsWeb)
 
@@ -18,4 +21,3 @@ object Build extends Build {
 			dependsOn(jiraView, catsView)
 
 }
-
