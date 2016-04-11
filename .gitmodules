@@ -1,11 +1,11 @@
 [submodule "planty-worklogs-common"]
 	path = planty-worklogs-common
 	#url = https://github.com/macpersia/planty-worklogs-common.git
-	url = ./planty-worklogs-common
+	url = git@github.com:macpersia/planty-worklogs-common.git
 [submodule "planty-cats-view"]
 	path = planty-cats-view
 	#url = https://github.com/macpersia/planty-cats-view.git
-	url = ./planty-cats-view
+	url = git@github.com:macpersia/planty-cats-view.git
 [submodule "planty-jira-view"]
 	path = planty-jira-view
 	#url = https://github.com/macpersia/planty-jira-view.git
