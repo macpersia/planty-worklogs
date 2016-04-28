@@ -14,4 +14,8 @@
 	path = planty-worklogs-web
 	#url = https://github.com/macpersia/planty-worklogs-web.git
 	url = git@github.com:macpersia/planty-worklogs-web.git
+[submodule "planty-worklogs-angular"]
+	path = planty-worklogs-angular
+	#url = https://github.com/macpersia/planty-worklogs-angular.git
+	url = git@github.com:macpersia/planty-worklogs-angular.git
 
