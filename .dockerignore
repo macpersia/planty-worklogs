@@ -1,2 +1,6 @@
 /target/
-**/target/
+/planty-worklogs-commmon/target/
+/planty-jira-view/target/
+/planty-cats-view/target/
+/planty-worklogs-web/target/
+/planty-worklogs-angular/dist/

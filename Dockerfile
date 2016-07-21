@@ -22,7 +22,12 @@ RUN sbt publishLocal
 WORKDIR /src/planty-worklogs/planty-jira-view
 RUN sbt publishLocal
 
+WORKDIR /src/planty-worklogs/planty-worklogs-angular
+RUN npm run build.prod -- --base /ng/
+
 WORKDIR /src/planty-worklogs/planty-worklogs-web
+RUN rm -rf public/ng/
+RUN cp -rf ../planty-worklogs-angular/dist/prod public/ng
 RUN sbt stage
 
 CMD ["target/universal/stage/bin/planty-worklogs-web"]
