@@ -44,7 +44,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="ThreadGroup" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">25</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">2</stringProp>
         <stringProp name="ThreadGroup.ramp_time">2</stringProp>
@@ -62,7 +62,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;baseUrl&quot;:&quot;https://jira02.jirahosting.de/jira&quot;,&quot;username&quot;:&quot;ahma016&quot;,&quot;password&quot;:&quot;FelanH!ch1&quot;,&quot;jiraQuery&quot;:&quot;project = BICM&quot;,&quot;fromDate&quot;:&quot;2015-10-01&quot;,&quot;toDate&quot;:&quot;2015-11-13&quot;,&quot;tzOffsetMinutes&quot;:-480}</stringProp>
+                <stringProp name="Argument.value">{&quot;baseUrl&quot;:&quot;https://jira02.jirahosting.de/jira&quot;,&quot;username&quot;:&quot;ahma016&quot;,&quot;password&quot;:&quot;FelanH!ch1&quot;,&quot;jiraQuery&quot;:&quot;project = BICM&quot;,&quot;fromDate&quot;:&quot;2015-10-01&quot;,&quot;toDate&quot;:&quot;2015-11-01&quot;,&quot;tzOffsetMinutes&quot;:-480}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
