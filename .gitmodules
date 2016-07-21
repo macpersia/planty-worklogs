@@ -1,21 +1,21 @@
 [submodule "planty-worklogs-common"]
 	path = planty-worklogs-common
-	url = https://github.com/macpersia/planty-worklogs-common.git
-	#url = git@github.com:macpersia/planty-worklogs-common.git
+	#url = https://github.com/macpersia/planty-worklogs-common.git
+	url = git@github.com:macpersia/planty-worklogs-common.git
 [submodule "planty-cats-view"]
 	path = planty-cats-view
-	url = https://github.com/macpersia/planty-cats-view.git
-	#url = git@github.com:macpersia/planty-cats-view.git
+	#url = https://github.com/macpersia/planty-cats-view.git
+	url = git@github.com:macpersia/planty-cats-view.git
 [submodule "planty-jira-view"]
 	path = planty-jira-view
-	url = https://github.com/macpersia/planty-jira-view.git
-	#url = git@github.com:macpersia/planty-jira-view.git
+	#url = https://github.com/macpersia/planty-jira-view.git
+	url = git@github.com:macpersia/planty-jira-view.git
 [submodule "planty-worklogs-web"]
 	path = planty-worklogs-web
-	url = https://github.com/macpersia/planty-worklogs-web.git
-	#url = git@github.com:macpersia/planty-worklogs-web.git
+	#url = https://github.com/macpersia/planty-worklogs-web.git
+	url = git@github.com:macpersia/planty-worklogs-web.git
 [submodule "planty-worklogs-angular"]
 	path = planty-worklogs-angular
-	url = https://github.com/macpersia/planty-worklogs-angular.git
-	#url = git@github.com:macpersia/planty-worklogs-angular.git
+	#url = https://github.com/macpersia/planty-worklogs-angular.git
+	url = git@github.com:macpersia/planty-worklogs-angular.git
 
