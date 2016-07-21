@@ -9,10 +9,18 @@
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0
 export PATH="$JAVA_HOME/bin:$PATH"
 
-#export JAVA_OPTS="-Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT"
+export JAVA_OPTS="-Dhttp.address=$OPENSHIFT_DIY_IP -Dhttp.port=$OPENSHIFT_DIY_PORT"
 export JAVA_OPTS="$JAVA_OPTS -Xms256m -Xmx416m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=96m -Duser.home=$OPENSHIFT_DATA_DIR/fakehome"
 export JAVA_OPTS="$JAVA_OPTS -Dmongodb.host=$OPENSHIFT_MONGODB_DB_HOST -Dmongodb.username=$OPENSHIFT_MONGODB_DB_USERNAME -Dmongodb.password=$OPENSHIFT_MONGODB_DB_PASSWORD"
-nohup $OPENSHIFT_REPO_DIR/planty-worklogs-web/target/universal/stage/bin/planty-worklogs-web |& /usr/bin/logshifter -tag diy &
+#nohup $OPENSHIFT_REPO_DIR/planty-worklogs-web/target/universal/stage/bin/planty-worklogs-web |& /usr/bin/logshifter -tag diy &
 
-nohup (cd $OPENSHIFT_REPO_DIR/planty-worklogs-angular/ && npm install && npm start --host $OPENSHIFT_DIY_IP --port $OPENSHIFT_DIY_PORT |& /usr/bin/logshifter -tag diy) &
+#export NPM_CONFIG_USERCONFIG=$OPENSHIFT_DATA_DIR/fakehome/.npmrc
+#export PATH=$OPENSHIFT_HOMEDIR/app-root/runtime/node-v4.4.5/bin/:$PATH
+#npm config set HOME $OPENSHIFT_DATA_DIR/fakehome
+#npm config set cache $OPENSHIFT_DATA_DIR/fakehome/.npm
+#cd $OPENSHIFT_REPO_DIR/planty-worklogs-angular
+#export HOME=$OPENSHIFT_DATA_DIR/fakehome
+#npm install http-server
+#nohup npm install && npm run tsc && node ./node_modules/.bin/http-server -a $OPENSHIFT_DIY_IP -p $OPENSHIFT_DIY_PORT |& /usr/bin/logshifter -tag diy &
+#cd -
 
