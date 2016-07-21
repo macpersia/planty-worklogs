@@ -12,3 +12,5 @@
 #cd $OPENSHIFT_REPO_DIR/planty-worklogs-web
 #$OPENSHIFT_BUILD_DEPENDENCIES_DIR/sbt/bin/sbt -v -mem 320 -Dsbt.log.noformat=true -Duser.home=$OPENSHIFT_DATA_DIR/fakehome stage
 
+mkdir $OPENSHIFT_REPO_DIR/planty-worklogs-web/target/universal/stage
+
