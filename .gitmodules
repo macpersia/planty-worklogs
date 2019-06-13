@@ -2,14 +2,14 @@
 	path = planty-worklogs-common
 	url = https://github.com/macpersia/planty-worklogs-common.git
 	#url = git@github.com:macpersia/planty-worklogs-common.git
-[submodule "planty-cats-view"]
-	path = planty-cats-view
-	url = https://github.com/macpersia/planty-cats-view.git
-	#url = git@github.com:macpersia/planty-cats-view.git
-[submodule "planty-jira-view"]
-	path = planty-jira-view
-	url = https://github.com/macpersia/planty-jira-view.git
-	#url = git@github.com:macpersia/planty-jira-view.git
+[submodule "planty-worklogs-adapter-cats"]
+	path = planty-worklogs-adapter-cats
+	url = https://github.com/macpersia/planty-worklogs-adapter-cats.git
+	#url = git@github.com:macpersia/planty-worklogs-adapter-cats.git
+[submodule "planty-worklogs-adapter-jira"]
+	path = planty-worklogs-adapter-jira
+	url = https://github.com/macpersia/planty-worklogs-adapter-jira.git
+	#url = git@github.com:macpersia/planty-worklogs-adapter-jira.git
 [submodule "planty-worklogs-web"]
 	path = planty-worklogs-web
 	url = https://github.com/macpersia/planty-worklogs-web.git
