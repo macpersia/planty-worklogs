@@ -16,10 +16,10 @@ ADD ./ /src/planty-worklogs/
 WORKDIR /src/planty-worklogs/planty-worklogs-common
 RUN sbt publishLocal
 
-WORKDIR /src/planty-worklogs/planty-cats-view
+WORKDIR /src/planty-worklogs/planty-worklogs--adapter-cats
 RUN sbt publishLocal
 
-WORKDIR /src/planty-worklogs/planty-jira-view
+WORKDIR /src/planty-worklogs/planty-worklogs-adapter-jira
 RUN sbt publishLocal
 
 WORKDIR /src/planty-worklogs/planty-worklogs-angular
