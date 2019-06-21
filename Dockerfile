@@ -23,7 +23,7 @@ WORKDIR /src/planty-worklogs/planty-worklogs-adapter-jira
 RUN sbt publishLocal
 
 WORKDIR /src/planty-worklogs/planty-worklogs-angular
-RUN sed 's/http:\/\/localhost:9000/https:\/\/diy-planty.rhcloud.com/g' src/client/app/services/worklog.service.ts
+RUN sed 's/http:\/\/localhost:9000/https:\/\/diy-planty.rhcloud.com/g' src/app/services/worklog.service.ts
 # BEGIN Installing Node.js
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
