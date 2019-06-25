@@ -13,3 +13,4 @@ planty-worklogs-common/.cache-main
 planty-worklogs-common/.classpath
 planty-worklogs-common/.gitignore
 planty-worklogs-common/.project
+db-data/
